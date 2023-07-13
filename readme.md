@@ -8,14 +8,12 @@ PLEASE IMPORT FIRST THE DATABASE SQL FILE FOR INITIAL TEMPLATE
 7. Create configuration file
 8. Include your configuration file on all of your apis
 9. Create model file and put all your database tables as constant
-<<<<<<< HEAD
 10. Sample routes
     a. index -> Get all lists method is GET - no parameter index()
     b. store -> Inserting record method is POST store(array of values)
     c. update -> Updating certain records method is POST update(id, array of values)
     d. delete / destroy -> Delete a records method is POST delete(id)
     e. show -> Get only one record method is GET show(id)
-=======
 10. Create api controller
     if (isset($_POST['trigger-variable'])) {
         //INPUT
@@ -27,4 +25,3 @@ PLEASE IMPORT FIRST THE DATABASE SQL FILE FOR INITIAL TEMPLATE
         //OUTPUT
         //output your response array through json_encode
     }
->>>>>>> c11577689426eb1590d8cd8fc6489577c50e031b
