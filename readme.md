@@ -1,3 +1,4 @@
+PLEASE IMPORT FIRST THE DATABASE SQL FILE FOR INITIAL TEMPLATE
 1. Create your boiler plate with index.html
 2. Create necessary folders for all your paths
 3. Create your database structure
@@ -7,9 +8,23 @@
 7. Create configuration file
 8. Include your configuration file on all of your apis
 9. Create model file and put all your database tables as constant
+<<<<<<< HEAD
 10. Sample routes
     a. index -> Get all lists method is GET - no parameter index()
     b. store -> Inserting record method is POST store(array of values)
     c. update -> Updating certain records method is POST update(id, array of values)
     d. delete / destroy -> Delete a records method is POST delete(id)
     e. show -> Get only one record method is GET show(id)
+=======
+10. Create api controller
+    if (isset($_POST['trigger-variable'])) {
+        //INPUT
+        accumulate your request and do json_decode
+
+        //PROCESS
+        process your request and do some logic 
+
+        //OUTPUT
+        //output your response array through json_encode
+    }
+>>>>>>> c11577689426eb1590d8cd8fc6489577c50e031b
