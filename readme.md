@@ -1,3 +1,4 @@
+PLEASE IMPORT FIRST THE DATABASE SQL FILE FOR INITIAL TEMPLATE
 1. Create your boiler plate with index.html
 2. Create necessary folders for all your paths
 3. Create your database structure
