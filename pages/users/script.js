@@ -155,3 +155,26 @@ function destroy(id) {
 function viewUser(id) {
     window.location.href = "view.html?q=" + id 
 }
+
+function getAllCourses() {
+    $.ajax({
+        "url" : COURSE_API, //URL of the API
+        "type" : "GET", //GET and POST 
+        "data" : "index", //auth will be our php variable $_POST['auth']
+        "success" : function (response) { //success yung response
+            let parseResponse = JSON.parse(response);
+            //Do certain process
+
+            let contents = parseResponse.data;
+            let options = "";
+            for (let i = 0; i <contents.length; i++) {
+                let id = contents[i].id
+                options += "<option value='" +id+ "'>" + contents[i].name + "</option>"
+            }
+            $("#course").html(options)
+        },
+        "error" : function (xhr, status, error) { //error yung response
+            alert("Error")
+        }
+    });
+}

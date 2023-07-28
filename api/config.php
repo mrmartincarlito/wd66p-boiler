@@ -2,6 +2,7 @@
 include "env.php";
 include "models.php";
 include "functions.php";
+session_start();
 
 /**
  * Connection string

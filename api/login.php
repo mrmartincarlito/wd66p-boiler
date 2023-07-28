@@ -21,6 +21,7 @@ if (isset($_POST['auth'])) {
         //db vs sa input
         if (password_verify($loginRequest->password, $user['password'])) {
             $response = createResponse(200, "Succesful", "Successful");
+            $_SESSION['logged-in-user'] = $user->id;
         } else {
             $response = createResponse(401, "Error", "Wrong Password please try again");
         }

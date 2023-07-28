@@ -52,6 +52,11 @@
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="email" class="form-control" id="username" aria-describedby="emailHelp">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Course</label>
+                    <select class="form-control" id="course">
+                    </select>
+                </div>
                 
                 <button type="button" onclick="update()" class="btn btn-primary">Update your Account</button>
             </div>
@@ -74,8 +79,8 @@
     <script src="../users/script.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        console.log(urlParams)
         show(urlParams.get('q'))
+        getAllCourses()
     </script>
 </body>
 
