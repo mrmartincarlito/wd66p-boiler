@@ -1,8 +1,74 @@
 /**
  * @var change url
  */
+
+let usersTable;
 index();
 function index() {
+    usersTable = $("#records").DataTable({
+        processing : true,
+        ajax : {
+            url : USERS_API + "?index",
+            dataSrc : function (response) {
+                console.log(response)
+                let return_data = new Array();
+
+                for (let i = 0; i<response.data.length; i++) 
+                {
+                    let id = response.data[i].id
+                    return_data.push({
+                        //@TODO
+                        //@var change keys depending on the table
+                        id : id,
+                        fname :  response.data[i].fname,
+                        lname :  response.data[i].lname,
+                        // date_time : response.records[i].date_time,
+                        action : "<button onclick='viewUser(" + id + ")' class='btn btn-warning'>VIEW</button> <button class='btn btn-danger' onclick='destroy(" + id + ")'>DELETE</button></td>"
+                    });
+                }
+
+                return return_data;
+            },
+            complete : function() {
+                //@TODO
+                //@var change databale 
+                $('#records tbody').on('dblclick', 'tr', function() {
+                    let data = $('#records')
+                        .DataTable()
+                        .row(this)
+                        .data()
+                    alert(data.id)
+                    //     $("#idToBeDisplay").html(data.id)
+                    // $("#name").val(data.name);
+                    // $("#price").val(data.price);
+                    // $("#modalClickerShow").click();
+
+                    // $("#saveButton").hide();
+                    // $("#updateButton").show();
+                    // $("#showId").show();
+                });
+            },
+        },
+        columns : [
+            //@TODO
+            //@var change data keys depending on the table column declared above
+            { data : 'id' },
+            { data : 'fname' },
+            { data : 'lname' },
+            // { data : 'date_time' },
+            { data : 'action' },
+        ],
+        dom : 'lBfrtip',
+        buttons : [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdf'
+        ]
+    });
+}
+
+function indexBack() {
     $.ajax({
         "url" : USERS_API, //URL of the API
         "type" : "GET", //GET and POST 
@@ -143,7 +209,8 @@ function destroy(id) {
             alert(parseResponse.description)
 
             if (parseResponse.status == 200) {
-                index();
+                //index();
+                usersTable.ajax.reload(null, false)
             }
         },
         "error" : function (xhr, status, error) { //error yung response
