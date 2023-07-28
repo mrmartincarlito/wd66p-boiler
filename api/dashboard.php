@@ -4,7 +4,7 @@ include "config.php";
 if (isset($_GET['index'])) {
     $response = array();
 
-    $sql = "SELECT COUNT(id) as 'total_users' FROM " . TBL_USERS . " WHERE is_active = 1";
+    $sql = "SELECT COUNT(id) as 'total_users' FROM " . TBL_USERS . " WHERE created_by = " . $_SESSION['logged-in-user']['id'];
     $results = $connection->query($sql);
 
     $dashboardResults = array();

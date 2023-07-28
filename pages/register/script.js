@@ -10,7 +10,7 @@ function register() {
     $.ajax({
         "url" : REGISTER_API, //URL of the API
         "type" : "POST", //GET and POST 
-        "data" : "register=" + JSON.stringify(registrationRequest), //auth will be our php variable $_POST['auth']
+        "data" : "store=" + JSON.stringify(registrationRequest), //auth will be our php variable $_POST['auth']
         //JS JSON.stringify -> PHP json_decode
         //PHP json_encode -> JSON.parse
         //5. Check your API and do the process

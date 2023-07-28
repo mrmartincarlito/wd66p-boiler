@@ -20,9 +20,8 @@
  /**
   * @var change DB_NAME
   */
- //define("DB_NAME", "if0_34646045_db_mp2");
+ /*define("DB_NAME", "if0_34646045_db_mp2");*/
 
- 
  define("DB_HOST", "localhost");
  define("DB_USER", "root");
  define("DB_PASSWORD", "");
