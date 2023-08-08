@@ -14,4 +14,6 @@ class Users extends dbObject {
         "created_at" => array("datetime", "required"),
         "is_active" => array("int", "required")
     );
+
+    
 }
