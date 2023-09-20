@@ -40,7 +40,7 @@
             </div>
         </div>
     </nav>
-    <h2 class="ms-2">Users Management</h2>
+    <h2 class="ms-2">Items Management</h2>
     <div class="row mt-3 ms-2" id="cards">
         <div class="col">
             <div class="card" style="width: 18rem;">
@@ -55,13 +55,23 @@
         </div>
     </div>
     <div class="row mt-3">
+        <div class="col-6 ms-5">
+            <input type="number" placeholder="Enter ID" id="id" /> <br />
+            <input type="text" placeholder="Enter Name" id="name"/> <br />
+            <input type="number" placeholder="Enter Price" id="price"/> <br />
+            <input type="number" placeholder="Enter Stocks" id="stocks"/> <br />
+            <input type="email" placeholder="Enter Email" id="email"/> <br />
+            <button type="button" onclick="store()">Save Item</button>
+            <br/ ><br/>
+        </div>
         <div class="col-12">
             <table class="table table-striped table-responsive" id="records">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stocks</th>
                         <!-- <th>Username</th>
                         <th>Created At</th>-->
                         <th>Action</th>
@@ -97,7 +107,7 @@
     
 
     <!--Please change your page name-->
-    <script src="../users/script.js"></script>
+    <script src="../items/script.js"></script>
 </body>
 
 </html>
